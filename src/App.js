@@ -5,6 +5,7 @@ import { Layout } from 'antd';
 import {
   Navbar,
   Homepage,
+  Exchanges,
   Cryptocurrencies,
   CryptoDetails,
   News,
@@ -23,6 +24,10 @@ const App = () => {
             <Routes>
               <Route exact path="/">
                 <Homepage />
+              </Route>
+
+              <Route exact path="/exchanges">
+                <Exchanges />
               </Route>
 
               <Route exact path="/cryptocurrencies">
