@@ -1,6 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Layout } from 'antd';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Layout, Typography, Space } from 'antd';
 
 import {
   Navbar,
@@ -30,8 +30,22 @@ const App = () => {
             </Routes>
           </div>
         </Layout>
+
+        {/* footer */}
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: 'white', textAlign: 'center' }}
+          >
+            © 2021 CryptoMaestro, Inc.
+          </Typography.Title>
+          <Space>
+            <Link to="/">Homepage</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
+        </div>
       </div>
-      <div className="footer"></div>
     </div>
   );
 };
