@@ -20,3 +20,33 @@
     * NOTHING RENDERRED and LINKS DONT WORK is you dont wrap Router around App Component like this
 
 - Commit 4: Switch has been replaced with Routes
+
+3/ How to configure and use Redux Toolkit
+- Documentation: https://redux.js.org/tutorials/essentials/part-7-rtk-query-basics
+- If there is anything cloudy, just relate to the documentation
+
+  3.1 Create src/app/store.js
+    + import { configureStore } from '@reduxjs/toolkit';
+    + export configureStore({ reducer: {} });
+
+  3.2 Create src/services/cryptoApi.js
+
+  3.3 Go to RapidApi (for this app) -> find Coinranking -> Copy the var options -> paste temporarily to cryptoApi.js
+
+  3.4 In src/index.js: 
+    + import { Provider } from 'react-redux'; import store from './app/store'
+    + Wrap <App /> with Provider -> the entire App Component now have access to the store variable
+
+  3.5 In src/services/cryptoApi.js
+    + import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+    + Create 2 variable to contain: headers and baseUrl from var options
+    + export const cryptoApi = createApi({ reducerPath:..., baseQuery: fetchBaseQuery({...}), endpoints:... });
+    + export { useGetCryptosQuery } = cryptoApi;
+
+  3.6 Connect the API to the store
+    +  ... reducer: { [ cryptoApi.reducerPath ]: cryptoApi.reducer}
+
+  3.7 In Component
+    + const [data, isFetching] = useGetCryptosQuery();
+    + isFetching is to show any loading animation woo hoo!
+    + data is the object that contains the response
