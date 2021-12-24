@@ -9,7 +9,7 @@ import { Cryptocurrencies, News } from '../components';
 const { Title } = Typography;
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery(); // ! {}, not []
+  const { data, isFetching } = useGetCryptosQuery(10); // ! {}, not []
   const globalStats = data?.data?.stats;
 
   if (isFetching) return 'Loading...';
@@ -59,7 +59,7 @@ const Homepage = () => {
           <Link to="/cryptocurrencies">Show More</Link>
         </Title>
       </div>
-      <Cryptocurrencies />
+      <Cryptocurrencies simplified/>
 
       {/* News section */}
       <div className="home-heading-container">
@@ -70,7 +70,7 @@ const Homepage = () => {
           <Link to="/news">Show More</Link>
         </Title>
       </div>
-      <News />
+      <News simplified/>
     </>
   );
 };
