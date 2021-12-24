@@ -22,19 +22,19 @@ const Navbar = () => {
 
       {/* nav bar items  */}
       <Menu theme="dark">
-        <Menu.Item icon={<HomeOutlined />}>
+        <Menu.Item key="Home-menu-item" icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>
 
-        <Menu.Item icon={<FundOutlined />}>
+        <Menu.Item key="Cryptocurrencies-menu-item" icon={<FundOutlined />}>
           <Link to="/cryptocurrencies">Cryptocurrencies</Link>
         </Menu.Item>
 
-        <Menu.Item icon={<MoneyCollectOutlined />}>
+        <Menu.Item key="Exchanges-menu-item" icon={<MoneyCollectOutlined />}>
           <Link to="/exchanges">Exchanges</Link>
         </Menu.Item>
 
-        <Menu.Item icon={<BulbOutlined />}>
+        <Menu.Item key="News-menu-item" icon={<BulbOutlined />}>
           <Link to="/news">News</Link>
         </Menu.Item>
       </Menu>
