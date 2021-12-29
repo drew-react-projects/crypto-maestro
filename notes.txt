@@ -50,3 +50,6 @@
     + const [data, isFetching] = useGetCryptosQuery();
     + isFetching is to show any loading animation woo hoo!
     + data is the object that contains the response
+
+4/ When working on Crypto details
+- useParams() allows you to use the id in the url as a variable 
